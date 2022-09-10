@@ -1,0 +1,99 @@
+<!--Main Navigation-->
+<header>
+  <style>
+    #intro {
+      background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
+      height: 100vh;
+    }
+
+    /* Height for devices larger than 576px */
+    @media (min-width: 992px) {
+      #intro {}
+    }
+
+    .navbar .nav-link {
+      color: #fff !important;
+    }
+
+  </style>
+
+  <!-- Navbar -->
+
+  <!-- Navbar -->
+
+  <!-- Background image -->
+  <div id="intro" class="bg-image shadow-2-strong">
+
+    <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div style="position: absolute; top: 2px; left: 2px;">
+        <button type="submit" class="btn btn-outline-light center text-white"
+          (click)="onNavigateToLogin(); ">Login</button>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-5 col-md-8">
+            <!-- <div class="top_link mb-3" (click)="onNavigate()">
+                          <a><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" class="text-white">Sign in</a>
+                      </div> -->
+            <form class="bg-white  rounded-5 shadow-5-strong p-3">
+              <div>
+                <h5 class="text-center mb-3"> Create Account </h5>
+              </div>
+              <!-- Email input -->
+              <div class="form-outline mb-1">
+                <mat-form-field appearance="outline" style="width: 100%">
+                  <mat-label>Organization Name</mat-label>
+                  <input matInput placeholder="Emirates">
+                </mat-form-field>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-1">
+                <mat-form-field appearance="outline" style="width: 100%">
+                  <mat-label>Contact</mat-label>
+                  <input matInput placeholder="+1 2345 7575">
+                </mat-form-field>
+              </div>
+
+              <div class="form-outline mb-1">
+                <mat-form-field appearance="outline" style="width: 100%">
+                  <mat-label>Tax No</mat-label>
+                  <input matInput placeholder="Optional">
+                </mat-form-field>
+              </div>
+
+              <div class="form-outline mb-1">
+                <mat-form-field appearance="outline" style="width: 100%">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="*******">
+                </mat-form-field>
+              </div>
+
+              <div class="form-outline mb-1">
+                <label class="form-label" for="form1Example5">Register</label>
+                <input type="file" id="form1Example5" class="form-control" />
+              </div>
+
+              <div class="form-outline mb-1">
+                <label class="form-label" for="form1Example6">Tax Registration</label>
+                <input type="file" id="form1Example6" class="form-control" />
+              </div>
+
+              <!-- 2 column grid layout for inline styling -->
+
+              <!-- Submit button -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-outline-primary center"
+                  (click)="addToken(); onNavigateToHome(); ">Register</button>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+<!--Main Navigation-->
+Footer
