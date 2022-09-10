@@ -1,1 +1,79 @@
-<p>securitycode works!</p>
+<!--Main Navigation-->
+<header>
+  <style>
+    #intro {
+      background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
+      height: 100vh;
+    }
+
+    /* Height for devices larger than 576px */
+    @media (min-width: 992px) {
+      #intro {}
+    }
+
+    .navbar .nav-link {
+      color: #fff !important;
+    }
+
+  </style>
+
+  <!-- Navbar -->
+
+  <!-- Navbar -->
+
+  <!-- Background image -->
+  <div id="intro" class="bg-image shadow-2-strong">
+
+    <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div style="position: absolute; top: 2px; left: 2px;">
+        <button type="submit" class="btn btn-outline-light center text-white"
+          (click)="onNavigateToLogin()">Login</button>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-5 col-md-8">
+            <!-- <div class="top_link mb-3" (click)="onNavigate()">
+                          <a><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" class="text-white">Sign in</a>
+                      </div> -->
+            <form class="bg-white  rounded-5 shadow-5-strong p-3">
+              <!-- Email input -->
+              <div>
+                <h5 class="text-center mb-3 pb-3"> Code Verification </h5>
+              </div>
+              <div class="row mb-4">
+                <div class="col-lg-2 col-md-2 col-2 ps-0 ps-md-2">
+                  <input type="text" class="form-control text-lg text-center" placeholder="_" aria-label="2fa">
+                </div>
+                <div class="col-lg-2 col-md-2 col-2 ps-0 ps-md-2">
+                  <input type="text" class="form-control text-lg text-center" placeholder="_" aria-label="2fa">
+                </div>
+                <div class="col-lg-2 col-md-2 col-2 ps-0 ps-md-2">
+                  <input type="text" class="form-control text-lg text-center" placeholder="_" aria-label="2fa">
+                </div>
+                <div class="col-lg-2 col-md-2 col-2 pe-0 pe-md-2">
+                  <input type="text" class="form-control text-lg text-center" placeholder="_" aria-label="2fa">
+                </div>
+                <div class="col-lg-2 col-md-2 col-2 pe-0 pe-md-2">
+                  <input type="text" class="form-control text-lg text-center" placeholder="_" aria-label="2fa">
+                </div>
+                <div class="col-lg-2 col-md-2 col-2 pe-0 pe-md-2">
+                  <input type="text" class="form-control text-lg text-center" placeholder="_" aria-label="2fa">
+                </div>
+              </div>
+
+
+              <!-- Submit button -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-outline-primary center"
+                  (click)="addToken(); onNavigateToHome(); ">Confirm</button>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+<!--Main Navigation-->

@@ -11,7 +11,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {}
 
   onNavigateToLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/signin']);
   }
 
   onNavigateToHome() {
@@ -19,6 +19,6 @@ export class SignupComponent implements OnInit {
   }
 
   addToken() {
-    sessionStorage.setItem('login', 'true');
+    sessionStorage.setItem('signin', 'true');
   }
 }
