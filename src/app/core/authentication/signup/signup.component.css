@@ -2,6 +2,10 @@ img {
   width: 100%;
 }
 
+.navbar .nav-link {
+  color: #fff !important;
+}
+
 .login {
   height: 100% !important;
   width: 100%;
@@ -135,7 +139,7 @@ img {
 
 .top_link img {
   width: 28px;
-  padding-right1: 7px;
+  padding-right: 7px;
   margin-top: -3px;
 }
 

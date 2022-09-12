@@ -9,6 +9,7 @@ import { SecuritycodeComponent } from './securitycode/securitycode.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
+import { ImageDirective } from 'src/app/shared/directives/image.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
     SignupComponent,
     ForgetpasswordComponent,
     SecuritycodeComponent,
+    ImageDirective,
   ],
   imports: [
     CommonModule,
