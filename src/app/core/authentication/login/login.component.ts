@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   onNavigateToHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
   addToken() {

@@ -4,14 +4,14 @@ import { PagenotfoundComponent } from './shared/components/pagenotfound.componen
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'signup',
     loadChildren: () =>
       import('./core/authentication/authentication.module').then(
         (m) => m.AuthenticationModule
       ),
   },
   {
-    path: 'home',
+    path: '',
     loadChildren: () =>
       import('./core/home/home.module').then((m) => m.HomeModule),
   },

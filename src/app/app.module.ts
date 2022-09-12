@@ -4,11 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ImageDirective } from './shared/directives/image.directive';
-import { PagenotfoundComponent } from './shared/components/pagenotfound.component';
 
 @NgModule({
-  declarations: [AppComponent, PagenotfoundComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],

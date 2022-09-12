@@ -34,7 +34,7 @@ export class AuthenticationGuard
     | UrlTree {
     return this.tokenService.tokenexists()
       ? true
-      : (this.router.navigate(['']), false);
+      : (this.router.navigate(['/signup']), false);
   }
 
   canActivateChild(

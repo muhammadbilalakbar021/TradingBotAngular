@@ -5,9 +5,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    canActivate: [AuthenticationGuard],
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
     component: HomeComponent,
+    canActivate: [AuthenticationGuard],
   },
 ];
 
