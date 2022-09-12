@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
   }
 
   onNavigateToHome() {
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
   }
 
   addToken() {
