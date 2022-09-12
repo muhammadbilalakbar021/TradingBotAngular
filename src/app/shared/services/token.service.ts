@@ -8,7 +8,7 @@ export class TokenService {
 
   tokenexists(): boolean {
     try {
-      return sessionStorage.getItem('signin') ? true : false;
+      return sessionStorage.getItem('signin') == 'true' ? true : false;
     } catch (error) {
       throw new Error('Error while getting token');
     }

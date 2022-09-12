@@ -15,10 +15,6 @@ export class ForgetpasswordComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  onNavigateToRegister() {
-    this.router.navigate(['/register']);
-  }
-
   onNavigateToPhoneVerification() {
     this.router.navigate(['/2fa']);
   }
