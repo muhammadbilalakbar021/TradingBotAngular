@@ -1,3 +1,4 @@
+import { LineloaderComponent } from './../../utils/loaders/lineloader.component';
 import { LoaderDirective } from './../../shared/directives/loader.directive';
 import { TwolineloaderComponent } from './../../utils/loaders/twolineloader.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -27,6 +28,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     CandleStickChartComponent,
     TwolineloaderComponent,
     LoaderDirective,
+    LineloaderComponent,
   ],
   exports: [NgxSpinnerModule],
   imports: [CommonModule, HomeRoutingModule, NgxSpinnerModule, MatCardModule],
