@@ -6,10 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import * as CanvasJSAngularChart from '../assets/canvas/canvasjs.angular.component';
+import { SplashscreenComponent } from './shared/components/splashscreen/splashscreen.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SplashscreenComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
