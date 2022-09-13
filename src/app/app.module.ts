@@ -5,9 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import * as CanvasJSAngularChart from '../assets/canvas/canvasjs.angular.component';
 import { SplashscreenComponent } from './shared/components/splashscreen/splashscreen.component';
-var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
+
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [AppComponent, SplashscreenComponent],

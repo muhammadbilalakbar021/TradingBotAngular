@@ -1,7 +1,10 @@
 <app-navbar></app-navbar>
 <div style="width:100% !important; display: flex; flex-direction: row;" class="mt-5">
   <div style="width: 50%" class="m-3 shadow-5">
-    <app-line-chart></app-line-chart>
+    <div style="position: relative; min-width: 100%; min-height: 100%;">
+      <app-twolineloader></app-twolineloader>
+      <app-line-chart style="position: relative; opacity: 0.2;"></app-line-chart>
+    </div>
   </div>
   <div style="width: 50%" class="m-3  shadow-5">
     <app-donut-chart></app-donut-chart>
@@ -15,3 +18,7 @@
     <app-candle-chart></app-candle-chart>
   </div>
 </div>
+<!-- <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="small"
+      template="'<img src='https://media.giphy.com/media/o8igknyuKs6aY/giphy.gif' />'">
+      <p class="loading">Loading Awesomeness...</p>
+    </ngx-spinner> -->
