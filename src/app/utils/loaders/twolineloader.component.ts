@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-twolineloader',
-  template: `<div
-    class="loader"
-    style="position: absolute; left: 50%; top: 40%; z-index: 100;"
-  ></div>`,
+  template: `
+    <div *ngIf="toLoad">
+      <div appLoader>
+        <div class="loader" [ngStyle]="loaderCss()" ng-class="{}"></div>
+      </div>
+    </div>
+  `,
   styles: [
     `
-      .loader {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        position: relative;
-        animation: rotate 1s linear infinite;
-      }
       .loader::before,
       .loader::after {
         content: '';
@@ -22,7 +18,7 @@ import { Component, OnInit } from '@angular/core';
         position: absolute;
         inset: 0px;
         border-radius: 50%;
-        border: 5px solid rgb(204, 28, 28);
+        border: 5px solid #ff4d00;
         animation: prixClipFix 2s linear infinite;
       }
       .loader::after {
@@ -63,7 +59,27 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class TwolineloaderComponent implements OnInit {
+  @Input() size!: any;
+  @Input() toLoad: boolean = true;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('size', this.size);
+    this.size = this.size ? this.size : 100;
+  }
+
+  loaderCss(): any {
+    try {
+      return {
+        width: this.size + 'px',
+        height: this.size + 'px',
+        animation: 'rotate 1s linear infinite',
+        'z-index': '100',
+        /* border-radius: 50%; */
+      };
+    } catch (error) {
+      throw new Error('Error loading borderradius ' + error);
+    }
+  }
 }

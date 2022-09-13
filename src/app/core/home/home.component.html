@@ -1,10 +1,8 @@
 <app-navbar></app-navbar>
 <div style="width:100% !important; display: flex; flex-direction: row;" class="mt-5">
-  <div style="width: 50%" class="m-3 shadow-5">
-    <div style="position: relative; min-width: 100%; min-height: 100%;">
-      <app-twolineloader></app-twolineloader>
-      <app-line-chart style="position: relative; opacity: 0.2;"></app-line-chart>
-    </div>
+  <div style="width: 50%; position: relative;" class="m-3 shadow-5">
+    <app-twolineloader [size]="100" [toLoad]="false"></app-twolineloader>
+    <app-line-chart style="opacity: 0.2;"></app-line-chart>
   </div>
   <div style="width: 50%" class="m-3  shadow-5">
     <app-donut-chart></app-donut-chart>
