@@ -16,10 +16,17 @@ export class HomeComponent implements OnInit {
     { columnDef: 'city', header: 'City' },
   ];
   data!: any[];
+  showSpinner: boolean = true;
+  opacity: Object = { opacity: '0.2' };
 
   constructor(private spinner: NgxSpinnerService) {}
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.showSpinner = !this.showSpinner;
+      this.opacity = { opacity: '1' };
+    }, 5000);
+
     this.data = [
       {
         name: 'Molly Pope',

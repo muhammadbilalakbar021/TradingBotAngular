@@ -1,19 +1,22 @@
 <app-navbar></app-navbar>
 <div style="width:100% !important; display: flex; flex-direction: row;" class="mt-5">
   <div style="width: 50%; position: relative;" class="m-3 shadow-5">
-    <app-dotloader [size]="1" [toLoad]="true"></app-dotloader>
-    <app-line-chart style="opacity: 0.2;"></app-line-chart>
+    <app-dotloader [size]="1" [toLoad]="showSpinner"></app-dotloader>
+    <app-line-chart [ngStyle]="opacity"></app-line-chart>
   </div>
-  <div style="width: 50%" class="m-3  shadow-5">
-    <app-donut-chart></app-donut-chart>
+  <div style="width: 50%; position: relative;" class="m-3  shadow-5">
+    <app-twodotloader [size]="50" [toLoad]="showSpinner"></app-twodotloader>
+    <app-donut-chart [ngStyle]="opacity"></app-donut-chart>
   </div>
 </div>
 <div style="width:100% !important; display: flex; flex-direction: row;" class="mt-5 mb-5">
-  <div style="width: 50%" class="m-3 shadow-5">
-    <app-column-chart></app-column-chart>
+  <div style="width: 50%;  position: relative;" class="m-3 shadow-5">
+    <app-windowloader [size]="50" [toLoad]="showSpinner"></app-windowloader>
+    <app-column-chart [ngStyle]="opacity"></app-column-chart>
   </div>
-  <div style="width: 50%" class="m-3 shadow-5">
-    <app-candle-chart></app-candle-chart>
+  <div style="width: 50%;  position: relative;" class="m-3 shadow-5">
+    <app-echoloader [size]="100" [toLoad]="showSpinner"></app-echoloader>
+    <app-candle-chart [ngStyle]="opacity"></app-candle-chart>
   </div>
 </div>
 
