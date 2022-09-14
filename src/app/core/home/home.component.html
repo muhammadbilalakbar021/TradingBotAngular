@@ -16,7 +16,21 @@
     <app-candle-chart></app-candle-chart>
   </div>
 </div>
-<!-- <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="small"
+
+<div class="container">
+  <div class="container">
+    <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+    <button color="primary" style="margin-left: 1% !important;" mat-mini-fab
+      aria-label="Example icon button with a home icon">
+      <mat-icon>add</mat-icon>
+    </button>
+    <app-tree (action)="onTableAction($event)" [dataset]="data" [filter]="valueTobeFiltered" [columns]="columns"> >
+    </app-tree>
+  </div>
+  <!-- <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="small"
       template="'<img src='https://media.giphy.com/media/o8igknyuKs6aY/giphy.gif' />'">
       <p class="loading">Loading Awesomeness...</p>
     </ngx-spinner> -->
