@@ -18,11 +18,10 @@ import { Component, Input, OnInit } from '@angular/core';
         position: absolute;
         inset: 0px;
         border-radius: 50%;
-        border: 5px solid #ff4d00;
+        border: 5px solid #ff3c89;
         animation: prixClipFix 2s linear infinite;
       }
       .loader::after {
-        inset: 8px;
         transform: rotate3d(90, 90, 0, 180deg);
         border-color: #ff3d00;
       }
@@ -76,7 +75,7 @@ export class LineloaderComponent implements OnInit {
         height: this.size + 'px',
         animation: 'rotate 1s linear infinite',
         'z-index': '100',
-        /* border-radius: 50%; */
+        'border-radius': '50%',
       };
     } catch (error) {
       throw new Error('Error loading borderradius ' + error);

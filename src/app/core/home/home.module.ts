@@ -1,3 +1,5 @@
+import { DotLoaderComponent } from './../../utils/loaders/dotloader.component';
+import { EcholoaderComponent } from './../../utils/loaders/echoloader.component';
 import { LineloaderComponent } from './../../utils/loaders/lineloader.component';
 import { LoaderDirective } from './../../shared/directives/loader.directive';
 import { TwolineloaderComponent } from './../../utils/loaders/twolineloader.component';
@@ -15,6 +17,8 @@ import { LineChartComponent } from 'src/app/shared/components/graphs/linechart.c
 import { CandleStickChartComponent } from 'src/app/shared/components/graphs/candlestickchart.component';
 import { MatCardModule } from '@angular/material/card';
 import * as CanvasJSAngularChart from '../../../assets/canvas/canvasjs.angular.component';
+import { TwoDotloaderComponent } from 'src/app/utils/loaders/twodotsloader.component';
+import { WindowLoaderComponent } from 'src/app/utils/loaders/windowloader.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 @NgModule({
@@ -29,6 +33,10 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     TwolineloaderComponent,
     LoaderDirective,
     LineloaderComponent,
+    TwoDotloaderComponent,
+    EcholoaderComponent,
+    WindowLoaderComponent,
+    DotLoaderComponent,
   ],
   exports: [NgxSpinnerModule],
   imports: [CommonModule, HomeRoutingModule, NgxSpinnerModule, MatCardModule],
