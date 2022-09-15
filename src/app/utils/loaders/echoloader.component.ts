@@ -48,7 +48,6 @@ export class EcholoaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('size', this.size);
     this.size = this.size ? this.size : 100;
   }
 

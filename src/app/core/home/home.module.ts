@@ -1,7 +1,12 @@
+import { StoreModule } from '@ngrx/store';
 import {
-  TreeComponent,
+  userFeatureKey,
+  reducer,
+} from './../../shared/store/reducer/user.reducer';
+import {
+  TableComponent,
   ActionButtonsComponent,
-} from '../../shared/material/table/tree.component';
+} from '../../shared/material/table/table.component';
 import { DotLoaderComponent } from './../../utils/loaders/dotloader.component';
 import { EcholoaderComponent } from './../../utils/loaders/echoloader.component';
 import { LineloaderComponent } from './../../utils/loaders/lineloader.component';
@@ -51,7 +56,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     EcholoaderComponent,
     WindowLoaderComponent,
     DotLoaderComponent,
-    TreeComponent,
+    TableComponent,
     ActionButtonsComponent,
   ],
   exports: [NgxSpinnerModule],
@@ -70,6 +75,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
+    StoreModule.forFeature(userFeatureKey, reducer),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

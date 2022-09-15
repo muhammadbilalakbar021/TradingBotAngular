@@ -14,12 +14,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { TableConsts } from 'src/app/utils/enums/table';
+import { User } from '../../class/user';
 import { TableButtonAction } from '../../interfaces/tableButtonAction';
 import { TableColumn } from '../../interfaces/tableColumn';
 
 @Component({
   selector: 'app-tree',
-  templateUrl: './tree.component.html',
+  templateUrl: './table.component.html',
   styles: [
     `
       table {
@@ -32,12 +33,12 @@ import { TableColumn } from '../../interfaces/tableColumn';
     `,
   ],
 })
-export class TreeComponent implements OnInit, AfterViewInit, OnChanges {
+export class TableComponent implements OnInit, AfterViewInit, OnChanges {
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @Output() action: EventEmitter<TableButtonAction> =
     new EventEmitter<TableButtonAction>();
   @Input() columns!: Array<TableColumn>;
-  @Input() dataset: Array<any> = [];
+  @Input() dataset!: User[] | null | any;
   @Input() filter!: string;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
   dataSource!: MatTableDataSource<any>;
@@ -46,7 +47,6 @@ export class TreeComponent implements OnInit, AfterViewInit, OnChanges {
   value!: string;
 
   ngOnInit(): void {
-    console.log('filter', this.filter);
     // set table columns
     // this.columns.push({ columnDef: 'action', header: 'Action' });
     this.displayedColumns = this.displayedColumns.concat(
@@ -54,7 +54,7 @@ export class TreeComponent implements OnInit, AfterViewInit, OnChanges {
     );
     // pre-fix static
     this.displayedColumns.push('action');
-    this.dataSource = new MatTableDataSource<any>(this.dataset);
+    this.dataSource = new MatTableDataSource<User[]>(this.dataset);
 
     // set pagination
     this.dataSource.paginator = this.paginator;

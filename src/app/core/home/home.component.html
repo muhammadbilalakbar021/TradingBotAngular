@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div style="width:100% !important; display: flex; flex-direction: row;" class="mt-5">
+<div style="width:100% !important; display: flex; flex-direction: row;" class="container mt-5">
   <div style="width: 50%; position: relative;" class="m-3 shadow-5">
     <app-dotloader [size]="1" [toLoad]="showSpinner"></app-dotloader>
     <app-line-chart [ngStyle]="opacity"></app-line-chart>
@@ -9,17 +9,6 @@
     <app-donut-chart [ngStyle]="opacity"></app-donut-chart>
   </div>
 </div>
-<div style="width:100% !important; display: flex; flex-direction: row;" class="mt-5 mb-5">
-  <div style="width: 50%;  position: relative;" class="m-3 shadow-5">
-    <app-windowloader [size]="50" [toLoad]="showSpinner"></app-windowloader>
-    <app-column-chart [ngStyle]="opacity"></app-column-chart>
-  </div>
-  <div style="width: 50%;  position: relative;" class="m-3 shadow-5">
-    <app-echoloader [size]="100" [toLoad]="showSpinner"></app-echoloader>
-    <app-candle-chart [ngStyle]="opacity"></app-candle-chart>
-  </div>
-</div>
-
 <div class="container">
   <div class="container">
     <mat-form-field appearance="standard">
@@ -30,9 +19,28 @@
       aria-label="Example icon button with a home icon">
       <mat-icon>add</mat-icon>
     </button>
-    <app-tree (action)="onTableAction($event)" [dataset]="data" [filter]="valueTobeFiltered" [columns]="columns"> >
+    <app-tree (action)="onTableAction($event)" [dataset]="this.customers$ | async" [filter]="valueTobeFiltered"
+      [columns]="columns"> >
     </app-tree>
   </div>
+  <div style="width:100% !important; display: flex; flex-direction: row;" class="container mt-5 mb-5">
+    <div style="width: 50%;  position: relative;" class="m-3 shadow-5">
+      <app-windowloader [size]="50" [toLoad]="showSpinner"></app-windowloader>
+      <app-column-chart [ngStyle]="opacity"></app-column-chart>
+    </div>
+    <div style="width: 50%;  position: relative;" class="m-3 shadow-5">
+      <app-echoloader [size]="100" [toLoad]="showSpinner"></app-echoloader>
+      <app-candle-chart [ngStyle]="opacity"></app-candle-chart>
+    </div>
+  </div>
+
+  <h4>List of Customers</h4>
+  <!-- <button (click)="this.userService.addUser('bilal');">hello</button> -->
+  <div *ngFor="let customer of customers$ | async; let i=index">
+    <span>{{i+1}}.</span> {{customer.name}}
+  </div>
+
+
   <!-- <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="small"
       template="'<img src='https://media.giphy.com/media/o8igknyuKs6aY/giphy.gif' />'">
       <p class="loading">Loading Awesomeness...</p>
