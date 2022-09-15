@@ -61,6 +61,7 @@ export class TableComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    this.dataSource = new MatTableDataSource<User[]>(this.dataset);
     this.applyFilter(this.filter);
   }
 

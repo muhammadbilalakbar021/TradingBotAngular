@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { select, Store } from '@ngrx/store';
 import { selectUsers } from 'src/app/shared/store/selector/user.selectors';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/shared/material/dialog/dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +30,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private store: Store<UserState>,
-    public userService: UserService
+    public userService: UserService,
+    public dialog: MatDialog
   ) {
     this.customers$ = this.store.pipe(select(selectUsers));
     this.store.pipe(select(selectUsers)).subscribe((data: any) => {
@@ -51,5 +54,18 @@ export class HomeComponent implements OnInit {
 
   applyFilter(event: Event) {
     this.valueTobeFiltered = (event.target as HTMLInputElement).value;
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '300px',
+      data: new User({}),
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      console.log(result);
+      this.userService.addUser(result);
+    });
   }
 }

@@ -1,3 +1,4 @@
+import { DialogComponent } from './../../shared/material/dialog/dialog.component';
 import { StoreModule } from '@ngrx/store';
 import {
   userFeatureKey,
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { LineChartComponent } from 'src/app/shared/components/graphs/linechart.component';
 import { CandleStickChartComponent } from 'src/app/shared/components/graphs/candlestickchart.component';
@@ -58,6 +60,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     DotLoaderComponent,
     TableComponent,
     ActionButtonsComponent,
+    DialogComponent,
   ],
   exports: [NgxSpinnerModule],
   imports: [
@@ -76,6 +79,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MatMenuModule,
     MatButtonModule,
     StoreModule.forFeature(userFeatureKey, reducer),
+    MatDialogModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

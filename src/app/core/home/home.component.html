@@ -17,7 +17,7 @@
     </mat-form-field>
     <button color="primary" style="margin-left: 1% !important;" mat-mini-fab
       aria-label="Example icon button with a home icon">
-      <mat-icon>add</mat-icon>
+      <mat-icon (click)="openDialog()">add</mat-icon>
     </button>
     <app-tree (action)="onTableAction($event)" [dataset]="this.customers$ | async" [filter]="valueTobeFiltered"
       [columns]="columns"> >
@@ -35,7 +35,14 @@
   </div>
 
   <h4>List of Customers</h4>
-  <!-- <button (click)="this.userService.addUser('bilal');">hello</button> -->
+  <button (click)="this.userService.addUser({
+    name: 'Bilal',
+    date: 'Aug 6, 2022',
+    company: 'Cursus Et LLP',
+    country: 'Nigeria',
+    city: 'Iguala',
+    phone: '(415) 628-6853'
+  });">hello</button>
   <div *ngFor="let customer of customers$ | async; let i=index">
     <span>{{i+1}}.</span> {{customer.name}}
   </div>
